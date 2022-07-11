@@ -18,5 +18,11 @@ public class Main {
         System.out.println(machine.state);
         machine.turnCrank();
         System.out.println(machine.state);
+        machine.fill(5);
+        System.out.println(machine.getCount());
+        machine.insertQuarter();
+        System.out.println(machine.state);
+        machine.turnCrank();
+        System.out.println(machine.state);
     }
 }

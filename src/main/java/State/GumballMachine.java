@@ -6,6 +6,8 @@ public class GumballMachine {
     State sold;
     State soldOut;
 
+    State winnerState;
+
     State state = noQuarter;
     int count = 0;
     public GumballMachine(int n){
@@ -13,6 +15,7 @@ public class GumballMachine {
         hasQuarter = new HasQuarterState(this);
         sold = new SoldState(this);
         soldOut = new SoldOutState(this);
+        winnerState = new WinnerState(this);
 
         this.count = n;
         if (n == 0){
@@ -44,7 +47,13 @@ public class GumballMachine {
     }
 
     public void releaseBall(){
+        System.out.println("goma saindo...");
         this.count -= 1;
+    }
+
+    public void fill(int n){
+        this.count += n;
+        this.state = noQuarter;
     }
     public State getHasQuarter() {
         return hasQuarter;
@@ -61,4 +70,6 @@ public class GumballMachine {
     public State getSoldOut() {
         return soldOut;
     }
+
+    public State getWinner() {return winnerState;}
 }
