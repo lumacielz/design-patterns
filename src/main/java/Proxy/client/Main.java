@@ -9,7 +9,7 @@ import java.rmi.RemoteException;
 
 public class Main {
     public static void main(String[] args) {
-        String[] location = {"rmi:/riocomprido"};
+        String[] location = {"rmi:/mymachine"};
         GumballMonitor[] monitor = new GumballMonitor[location.length];
         for (int i=0; i < location.length; i++){
             try{
